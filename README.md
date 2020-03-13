@@ -22,14 +22,35 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 ## Interview Questions
 
-Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+ 
+The runtime complexity to access an array is: O(1) because it only takes one step. Adding or removing to the front of an array is O(n) because it requires re-indexing each element that follows it, and adding or removing from the back is O(1) because the array does not require a shift and only requires one step.
+
+
 
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+O(n) - if dynamic array doesn't have room for the new item you need to expand typically doubling the array making it slower.
+
+
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
+
+The first block is the genesis block - followed by inter-connected blocks. Each block contains a reference, a hash of the previous block linking the blocks together. The chain is a sequence of blocks in order (a list of dictionary objects, ie the block itself). The block itself contains
+BLOCK: - dictionary
+{
+	INDEX
+	TIMESTAMP
+	LIST OF TRANSACTIONS
+	PREV_HASH (created by utilizing SHA256; hashes are only one way
+	PROOF
+}
+
+
+
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+Proof of work is used to confirm transactions as new blocks are added to the chain. It is easy to modify because it publicly shared but the hash chain will be broken. It protects the chain and prevents attacks because it requires work from the service requester, processing time on a computer (which can take time, create a hash of the last block + new solution that will continue run through the possibilities and check each number against a condition). An attack would be if a particular user controls most of the mining power which means they can monopolize generating new blocks and prevent other miners from completing blocks.
 
 ## Project Set Up
 
